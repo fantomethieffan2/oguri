@@ -38,6 +38,7 @@ async def on_ready():
     print(f"🤖 Bot is ready and listening for:")
     print(f"   • '{TRIGGER_SENTENCE_DANCE}' -> Dance GIF")
     print(f"   • '{TRIGGER_SENTENCE_RUN}' -> Running GIF")
+    print(f"   • '{TRIGGER_SENTENCE_AGREE}' -> Agree GIF")
     print(f"📊 Connected to {len(bot.guilds)} server(s)")
 
 @bot.event
