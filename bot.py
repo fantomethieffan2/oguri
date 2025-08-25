@@ -26,6 +26,9 @@ DANCE_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-dancing-umamusume-ch
 TRIGGER_SENTENCE_RUN = "oguri cap, run away"
 RUN_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-5585391520653559663"
 
+TRIGGER_SENTENCE_RUN = "oguri cap, do you agree?"
+RUN_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-15407094230313995300"
+
 # ------------------------
 # Events
 # ------------------------
