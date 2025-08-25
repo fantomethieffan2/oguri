@@ -26,8 +26,8 @@ DANCE_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-dancing-umamusume-ch
 TRIGGER_SENTENCE_RUN = "oguri cap, run away"
 RUN_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-5585391520653559663"
 
-TRIGGER_SENTENCE_RUN = "oguri cap, do you agree?"
-RUN_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-15407094230313995300"
+TRIGGER_SENTENCE_AGREE = "oguri cap, do you agree?"
+AGREE_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-15407094230313995300"
 
 # ------------------------
 # Events
@@ -47,10 +47,13 @@ async def on_message(message):
 
     message_lower = message.content.lower()
 
-    if message_lower == TRIGGER_SENTENCE_DANCE.lower():
-        await message.channel.send(DANCE_GIF_URL)
-    elif message_lower == TRIGGER_SENTENCE_RUN.lower():
-        await message.channel.send(RUN_GIF_URL)
+if message_lower == TRIGGER_SENTENCE_DANCE.lower():
+    await message.channel.send(DANCE_GIF_URL)
+elif message_lower == TRIGGER_SENTENCE_RUN.lower():
+    await message.channel.send(RUN_GIF_URL)
+elif message_lower == TRIGGER_SENTENCE_AGREE.lower():
+    await message.channel.send(AGREE_GIF_URL)
+
 
     await bot.process_commands(message)
 
