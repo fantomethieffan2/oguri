@@ -18,7 +18,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # ------------------------
-# Trigger phrases and GIFs (your working Tenor links)
+# Trigger phrases and GIFs
 # ------------------------
 TRIGGER_SENTENCE_DANCE = "oguri cap, do that dance i like"
 DANCE_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-dancing-umamusume-chibi-gif-10169214246627292150"
@@ -35,9 +35,9 @@ AGREE_GIF_URL = "https://tenor.com/view/oguri-cap-oguri-cap-umamusume-uma-gif-15
 @bot.event
 async def on_ready():
     print(f"✅ {bot.user} has connected to Discord!")
-    print(f"🤖 Bot is ready and listening for:")
+    print("🤖 Bot is ready and listening for:")
     print(f"   • '{TRIGGER_SENTENCE_DANCE}' -> Dance GIF")
-    print(f"   • '{TRIGGER_SENTENCE_RUN}' -> Running GIF")
+    print(f"   • '{TRIGGER_SENTENCE_RUN}' -> Run GIF")
     print(f"   • '{TRIGGER_SENTENCE_AGREE}' -> Agree GIF")
     print(f"📊 Connected to {len(bot.guilds)} server(s)")
 
@@ -48,13 +48,12 @@ async def on_message(message):
 
     message_lower = message.content.lower()
 
-if message_lower == TRIGGER_SENTENCE_DANCE.lower():
-    await message.channel.send(DANCE_GIF_URL)
-elif message_lower == TRIGGER_SENTENCE_RUN.lower():
-    await message.channel.send(RUN_GIF_URL)
-elif message_lower == TRIGGER_SENTENCE_AGREE.lower():
-    await message.channel.send(AGREE_GIF_URL)
-
+    if message_lower == TRIGGER_SENTENCE_DANCE.lower():
+        await message.channel.send(DANCE_GIF_URL)
+    elif message_lower == TRIGGER_SENTENCE_RUN.lower():
+        await message.channel.send(RUN_GIF_URL)
+    elif message_lower == TRIGGER_SENTENCE_AGREE.lower():
+        await message.channel.send(AGREE_GIF_URL)
 
     await bot.process_commands(message)
 
